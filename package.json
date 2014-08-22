@@ -1,0 +1,28 @@
+{
+    "name": "marquee-js",
+    "description": "overflow marquee",
+    "version": "0.0.1",
+    "homepage": "",
+    "author": "Weilao <qqq123026689@126.com> (https://github.com/weilao)",
+    "repository": {
+        "type": "git",
+        "url": "git://gitbub.com/weilao/marquee.git"
+    },
+    "bugs": {
+        "url": "https://github.com/weilao/marquee/issues"
+    },
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "/blob/master/LICENSE"
+        }
+    ],
+    "keywords": [
+        "javascript",
+        "marquee",
+        "overflow",
+        "overflow-style"
+    ],
+    "main": "Gruntfile.js",
+    "license": "MIT"
+}

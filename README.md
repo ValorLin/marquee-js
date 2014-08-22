@@ -1,4 +1,6 @@
-DEMO
+### DEMO ###
+[Click here for DEMO](http://weilao.github.io/marquee-js)
+
 ### html ###
 ```html
 <div class="small-container">

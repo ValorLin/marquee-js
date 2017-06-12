@@ -6,7 +6,8 @@
 
     _window.Marquee = function (el, opts) {
         var self = this;
-        var edgeDelay,
+        var nextStep,
+            edgeDelay,
             currIndent = 0,
             currDelay = 0,
             currIncrease = -1;
@@ -25,7 +26,7 @@
             return;
         }
 
-        var nextStep = function () {
+        var nextStepBackAndForth = function () {
             if (minIndent >= currIndent) {
                 currIncrease = -1;
                 currDelay = edgeDelay;
@@ -40,6 +41,34 @@
                 nextStep();
             }, 50 + currDelay);
         };
+
+        var nextStepLoop = function () {
+            if (minIndent >= currIndent) {
+                currIndent = 0;
+                currDelay = edgeDelay;
+            } else {
+                if (currIndent === 0) {
+                    currDelay = edgeDelay;
+                }
+                currIndent--;
+            }
+            self.animateTimeout = setTimeout(function () {
+                el.style.textIndent = currIndent + 'px';
+                currDelay = 0;
+                nextStep();
+            }, 50 + currDelay);
+        };
+
+        switch (opts.style) {
+            default:
+            case 'back_and_forth':
+                nextStep = nextStepBackAndForth;
+                break;
+            case 'loop':
+                nextStep = nextStepLoop;
+                break;
+        }
+
         nextStep();
     };
 
@@ -48,7 +77,7 @@
             this.el.style.overflow = '';
             this.el.style.whiteSpace = '';
             clearTimeout(this.animateTimeout);
-        }
+        },
     };
 
 })(window);

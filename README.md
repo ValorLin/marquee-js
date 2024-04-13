@@ -1,5 +1,5 @@
 ### DEMO ###
-[Click here for DEMO](http://weilao.github.io/marquee-js)
+[Click here for DEMO](http://valorlin.github.io/marquee-js)
 
 ### html ###
 ```html
